@@ -9,6 +9,7 @@ module Api
           super
         end
 
+        # POST /api/v1/auth/sign_out
         def destroy
           super
         end
