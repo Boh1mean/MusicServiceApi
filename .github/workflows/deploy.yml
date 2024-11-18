@@ -31,6 +31,12 @@ jobs:
       uses: webfactory/ssh-agent@v0.5.3
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        
+    - name: Unlock SSH key
+      run: |
+        echo "${{ secrets.SSH_KEY_PASSWORD }}" | ssh-add -
+      env:
+        SSH_KEY_PASSWORD: ${{ secrets.SSH_KEY_PASSWORD 
 
     - name: Deploy with Kamal
       run: |
