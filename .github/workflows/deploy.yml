@@ -40,7 +40,7 @@ jobs:
 
     - name: Install Kamal
       run: |
-        gem install kamal
+        sudo gem install kamal
         echo 'export PATH=$PATH:$HOME/.gem/ruby/$(ruby -e "puts RUBY_VERSION")/bin' >> $GITHUB_ENV
 
     - name: Deploy with Kamal
