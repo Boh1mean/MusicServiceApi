@@ -32,12 +32,16 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+    - name: Install Ruby and Bundler
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ruby-full
+        sudo gem install bundler
+
     - name: Install Kamal
       run: |
-        curl -sSL https://get.kamal.sh | sh
-        export PATH=$PATH:$HOME/.kamal/bin
-        echo 'export PATH=$PATH:$HOME/.kamal/bin' >> $GITHUB_ENV
-        kamal --version
+        gem install kamal
+        echo 'export PATH=$PATH:$HOME/.gem/ruby/$(ruby -e "puts RUBY_VERSION")/bin' >> $GITHUB_ENV
 
     - name: Deploy with Kamal
       run: |
