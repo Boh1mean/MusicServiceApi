@@ -32,6 +32,10 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+    - name: Install Kamal
+      run: |
+        curl -sSL https://get.kamal.sh | sh
+
     - name: Deploy with Kamal
       run: |
         kamal deploy
