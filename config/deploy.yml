@@ -15,7 +15,6 @@ proxy:
 # Credentials for your image host.
 registry:  
   username: vgssy
-
   password:
     - KAMAL_REGISTRY_PASSWORD
 
@@ -26,12 +25,9 @@ ssh:
 env:
   secret:
     - RAILS_MASTER_KEY
+    - POSTGRES_PASSWORD
   clear:
-    
     SOLID_QUEUE_IN_PUMA: true
-
-
-    # Log everything from Rails
     RAILS_LOG_LEVEL: debug
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
@@ -59,9 +55,7 @@ accessories:
         POSTGRES_HOST: 176.114.90.118
       secret:
         - POSTGRES_PASSWORD
-    files:
-      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
-    directories:
+    volumes:
       - data:/var/lib/postgresql/data
-
+    
   
