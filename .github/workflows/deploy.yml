@@ -35,8 +35,7 @@ jobs:
     - name: Install Kamal
       run: |
         curl -sSL https://get.kamal.sh | sh
-        echo 'export PATH=$PATH:$HOME/.kamal/bin' >> $HOME/.bashrc
-        source $HOME/.bashrc
+        echo 'export PATH=$PATH:$HOME/.kamal/bin' >> $GITHUB_ENV
 
     - name: Deploy with Kamal
       run: |
