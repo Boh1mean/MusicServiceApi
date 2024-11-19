@@ -45,7 +45,7 @@ jobs:
 
     - name: Deploy with Kamal
       run: |
-        kamal deploy
+        kamal deploy --no-tty
       env:
         RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
