@@ -4,7 +4,7 @@ services:
   web:
     image: vgssy/music-streaming-api
     ports:
-      - "80:80"
+      - "8080:80"
     environment:
       RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
