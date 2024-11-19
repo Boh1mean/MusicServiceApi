@@ -6,6 +6,9 @@ image: vgssy/music-streaming-api
 servers:
     - 176.114.90.118
 
+ssh_options:
+    - "-T"
+
 proxy: 
   ssl: true
   host: api.example.com
