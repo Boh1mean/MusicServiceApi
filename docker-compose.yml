@@ -7,10 +7,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./db/postgres:/docker-entrypoint-initdb.d
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ats_production
     ports:
       - "5432:5432"
     env_file:
@@ -22,13 +18,13 @@ services:
       dockerfile: Dockerfile
       args:
         RAILS_ENV: production
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:prepare && bundle exec rails s -b '0.0.0.0'"
+    working_dir: /rails
     volumes:
       - .:/rails
       - /rails/public/assets # To prevent deleting precompiled assets.
       - bundle:/usr/local/bundle
     ports:
-      - "3000:3000"
+      - "80:3000"
     depends_on:
       - db
     environment:
