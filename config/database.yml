@@ -37,6 +37,8 @@ production:
   primary: &primary_production
     <<: *default
     database: music_service_api_production
+    host: db
+    port: 5432
   cache:
     <<: *primary_production
     database: music_service_api_production_cache
