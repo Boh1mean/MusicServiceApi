@@ -35,7 +35,9 @@ production:
   primary: &primary_production
     <<: *default
     database: music_service_api_production
-    host: db
+    host: <%= ENV["POSTGRES_HOST"] %>
+    username: <%= ENV["POSTGRES_USER"] %>
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
     port: 5432
   cache:
     <<: *primary_production
