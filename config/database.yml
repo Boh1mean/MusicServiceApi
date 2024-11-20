@@ -18,9 +18,9 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: MusicServiceApi
+  username: <%= ENV.fetch('POSTGRES_USER', 'postgres') %>
   password: <%= ENV["POSTGRES_PASSWORD"] %>
-  host: db
+  host: <%= ENV.fetch('POSTGRES_HOST', "db") %>
  
 
 development:
@@ -37,8 +37,6 @@ production:
   primary: &primary_production
     <<: *default
     database: music_service_api_production
-    username: music_service_api
-    password: <%= ENV["MUSIC_SERVICE_API_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: music_service_api_production_cache
