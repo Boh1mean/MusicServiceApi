@@ -42,7 +42,7 @@ services:
     environment:
       SECRET_KEY_BASE: ${SECRET_KEY_BASE}
       RAILS_ENV: production
-      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/ats_production
+      DATABASE_URL: ${DATABASE_URL}
       ASSUME_SSL: false
       FORCE_SSL: false
     env_file:
