@@ -37,7 +37,7 @@ gem "thruster", require: false
   gem "devise_token_auth", git: "https://github.com/lynndylanhurley/devise_token_auth"
 
   group :development, :test do
-    gem "dotenv-rails"
+    gem "dotenv-rails", "3.1.4"
   end
 
 group :development, :test do
