@@ -51,13 +51,8 @@ accessories:
     image: postgres:14
     host: 176.114.90.118
     port: 5432
-    env:
-      clear:
-        POSTGRES_USER: Vgssy
-        POSTGRES_DB: MusicServise
-        POSTGRES_HOST: 176.114.90.118
-      secret:
-        - POSTGRES_PASSWORD
+    env_file:
+      - .env
     volumes:
       - data:/var/lib/postgresql/data
     
