@@ -21,6 +21,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    networks:
+      - mynetwork
 
   web:
     build:
@@ -53,3 +55,6 @@ services:
 volumes:
   postgres_data:
   bundle:
+
+networks:
+      - mynetwork
