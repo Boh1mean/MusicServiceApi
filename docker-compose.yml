@@ -25,18 +25,22 @@ services:
       - mynetwork
 
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        RAILS_ENV: production
-    working_dir: /rails
+    build: .
+    command: >
+      bash -c "
+        while ! nc -z db 5432; do
+          echo 'Waiting for database...';
+          sleep 1;
+        done;
+        bundle exec rails db:migrate &&
+        bundle exec rails s -b 0.0.0.0 -p 3000
+      
     volumes:
       - .:/rails
       - /rails/public/assets # To prevent deleting precompiled assets.
       - bundle:/usr/local/bundle
       - /home/deploy/.env
-
+    
     ports:
       - "80:3000"
     depends_on:
@@ -59,4 +63,5 @@ volumes:
   bundle:
 
 networks:
-      - mynetwork
+  mynetwork:
+    driver: bridge
