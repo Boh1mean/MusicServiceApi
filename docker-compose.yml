@@ -51,6 +51,8 @@ services:
       - .env
     stdin_open: true
     tty: true
+    networks:
+      - mynetwork
 
 volumes:
   postgres_data:
