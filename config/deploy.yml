@@ -55,7 +55,7 @@ accessories:
       clear:
         POSTGRES_USER: deploy
         POSTGRES_DB: music_service_api_production
-        POSTGRES_HOST: 176.114.90.118
+        POSTGRES_HOST: db
         POSTGRES_PASSWORD: 1234567890
     volumes:
       - data:/var/lib/postgresql/data
