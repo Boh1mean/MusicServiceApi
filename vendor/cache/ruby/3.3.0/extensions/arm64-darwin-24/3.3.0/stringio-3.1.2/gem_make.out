@@ -1,0 +1,18 @@
+current directory: /Users/danilknyazkin/Documents/Prod/MusicServiceApi/vendor/cache/ruby/3.3.0/gems/stringio-3.1.2/ext/stringio
+/Users/danilknyazkin/.rbenv/versions/3.3.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/danilknyazkin/Documents/Prod/MusicServiceApi/vendor/cache/ruby/3.3.0/gems/stringio-3.1.2/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20241125-60749-n3i0l5 sitelibdir\=./.gem.20241125-60749-n3i0l5 clean
+
+current directory: /Users/danilknyazkin/Documents/Prod/MusicServiceApi/vendor/cache/ruby/3.3.0/gems/stringio-3.1.2/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20241125-60749-n3i0l5 sitelibdir\=./.gem.20241125-60749-n3i0l5
+compiling stringio.c
+linking shared-object stringio.bundle
+
+current directory: /Users/danilknyazkin/Documents/Prod/MusicServiceApi/vendor/cache/ruby/3.3.0/gems/stringio-3.1.2/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20241125-60749-n3i0l5 sitelibdir\=./.gem.20241125-60749-n3i0l5 install
+/opt/homebrew/bin/ginstall -c -m 0755 stringio.bundle ./.gem.20241125-60749-n3i0l5
+
+current directory: /Users/danilknyazkin/Documents/Prod/MusicServiceApi/vendor/cache/ruby/3.3.0/gems/stringio-3.1.2/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20241125-60749-n3i0l5 sitelibdir\=./.gem.20241125-60749-n3i0l5 clean
