@@ -37,3 +37,4 @@
 .idea
 
 .env
+/vendor/cache/ruby/3.3.0/bundler/gems/devise_token_auth-b7fcfdf98a84

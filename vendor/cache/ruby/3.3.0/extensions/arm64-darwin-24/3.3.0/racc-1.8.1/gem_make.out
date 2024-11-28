@@ -1,0 +1,18 @@
+current directory: /Users/danilknyazkin/Documents/Prod/MusicServiceApi/vendor/cache/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/danilknyazkin/.rbenv/versions/3.3.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/danilknyazkin/Documents/Prod/MusicServiceApi/vendor/cache/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241128-97009-xtrett sitelibdir\=./.gem.20241128-97009-xtrett clean
+
+current directory: /Users/danilknyazkin/Documents/Prod/MusicServiceApi/vendor/cache/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241128-97009-xtrett sitelibdir\=./.gem.20241128-97009-xtrett
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/danilknyazkin/Documents/Prod/MusicServiceApi/vendor/cache/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241128-97009-xtrett sitelibdir\=./.gem.20241128-97009-xtrett install
+/opt/homebrew/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20241128-97009-xtrett/racc
+
+current directory: /Users/danilknyazkin/Documents/Prod/MusicServiceApi/vendor/cache/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241128-97009-xtrett sitelibdir\=./.gem.20241128-97009-xtrett clean
