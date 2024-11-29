@@ -7,11 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "http://176.114.90.118:3000"
-
-    resource "*",
-      headers: :any,
-      expose: [ "access-token", "expiry", "token-type", "uid", "client" ],
-      methods: [ :get, :post, :put, :patch, :delete, :options, :head ]
+      origins %r{https://[a-z0-9-]+\.ngrok-free\.app}
+      resource "*", headers: :any, methods: [ :get, :post, :put, :delete, :options ]
   end
 end

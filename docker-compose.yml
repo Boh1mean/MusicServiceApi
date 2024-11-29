@@ -5,9 +5,10 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./db/postgres:/docker-entrypoint-initdb.d
-      - /home/deploy/.env
     ports:
       - "5432:5432"
+    networks:
+      - app-network
     env_file:
       - .env
     environment:
@@ -19,26 +20,20 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-    networks:
-      - mynetwork
+    
 
   web:
     build: .
     command: >
-      bash -c "
-        while ! nc -z db 5432; do
-          echo 'Waiting for database...';
-          sleep 1;
-        done;
-        bundle exec rails db:migrate &&
-        bundle exec rails s -b 0.0.0.0 -p 3000"
+         bash -c "bundle exec rails db:migrate && bundle exec rails s -b 0.0.0.0 -p 3000"
     volumes:
       - .:/rails
       - /rails/public/assets # To prevent deleting precompiled assets.
       - bundle:/usr/local/bundle
-      - /home/deploy/.env
     ports:
       - "3000:3000"
+    networks:
+      - app-network
     depends_on:
       - db
     environment:
@@ -52,13 +47,21 @@ services:
       - .env
     stdin_open: true
     tty: true
-    networks:
-      - mynetwork
 
+  ngrok:
+    image: wernight/ngrok
+    command: ngrok http http://localhost:3000 --authtoken=2pW3QezRxjjnTJ485Tpi5t18reH_3Q9iPYyD7wCKCkDmqGvnR
+    ports:
+      - "4040:4040" # Для доступа к ngrok dashboard
+    networks:
+      - app-network
+    
 volumes:
   postgres_data:
   bundle:
 
 networks:
-  mynetwork:
+  app-network:
     driver: bridge
+
+
